@@ -1,0 +1,321 @@
+
+/* =================================
+   PREMIUM RESTAURANT SIDEBAR
+================================= */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: #0d0817;
+  border-right: 1px solid #241536;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px 14px;
+  color: #ffffff;
+
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+/* Logo */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 10px 24px;
+  border-bottom: 1px solid #241536;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  border-radius: 12px;
+
+  font-size: 21px;
+
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.35);
+}
+
+.sidebar-logo h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.sidebar-logo span {
+  display: block;
+  margin-top: 3px;
+
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #9d8cae;
+}
+
+/* Sections */
+
+.sidebar-section {
+  margin-bottom: 18px;
+}
+
+.sidebar-title {
+  margin: 0 10px 8px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+
+  color: #75677f;
+}
+
+/* Navigation */
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 43px;
+  padding: 0 11px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+  color: #a99bb3;
+
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  color: #ffffff;
+  background: #171024;
+  transform: translateX(2px);
+}
+
+.sidebar-link.active {
+  color: #ffffff;
+
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.28),
+    rgba(124, 58, 237, 0.08)
+  );
+
+  box-shadow:
+    inset 3px 0 0 #8b5cf6,
+    0 5px 18px rgba(124, 58, 237, 0.08);
+}
+
+.sidebar-link.active::after {
+  content: "";
+
+  position: absolute;
+  right: 10px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: #a855f7;
+
+  box-shadow: 0 0 10px #a855f7;
+}
+
+/* Icons */
+
+.sidebar-icon {
+  width: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+}
+
+.sidebar-label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Badge */
+
+.sidebar-badge {
+  margin-left: auto;
+
+  min-width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+
+  background: #241536;
+  color: #b88cff;
+
+  font-size: 10px;
+}
+
+/* Bottom User */
+
+.sidebar-bottom {
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px;
+
+  background: #140d20;
+  border: 1px solid #241536;
+  border-radius: 12px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.user-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.user-info strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-info span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #81738d;
+
+  font-size: 9px;
+}
+
+.logout-btn {
+  border: none;
+  background: transparent;
+
+  color: #81738d;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  color: #a855f7;
+  transform: translateX(2px);
+}
+
+/* Scrollbar */
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #30203d;
+  border-radius: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 72px;
+    padding: 18px 8px;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+    padding: 5px 0 20px;
+  }
+
+  .sidebar-logo > div:last-child,
+  .sidebar-title,
+  .sidebar-label,
+  .sidebar-badge,
+  .sidebar-bottom .user-info,
+  .logout-btn {
+    display: none;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sidebar-icon {
+    width: auto;
+    font-size: 18px;
+  }
+
+  .sidebar-bottom {
+    justify-content: center;
+    padding: 8px;
+  }
+}
+

@@ -1,0 +1,305 @@
+/* =================================
+   CUSTOMERS PAGE
+================================= */
+
+.customers-page {
+  padding: 30px;
+  min-height: calc(100vh - 76px);
+ background: #090611;
+  color: #ffffff;
+}
+
+/* Header */
+
+.customers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.customers-header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #6d1e97;
+}
+
+.customers-header p {
+  margin-top: 6px;
+  color: #7d7183;
+}
+
+/* Add Button */
+
+.add-customer-btn {
+  border: none;
+  background: linear-gradient(135deg, #6a1b9a, #9c27b0);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(106, 27, 154, 0.25);
+}
+
+.add-customer-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(106, 27, 154, 0.35);
+}
+
+/* =================================
+   STATISTICS
+================================= */
+.customer-stat-card {
+  background: #15101c;
+  border: 1px solid #2d2035;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  background: #24152d;
+  color: #c084d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.customer-stat-card span {
+  color: #aaa0b2;
+  font-size: 13px;
+}
+
+.customer-stat-card h2 {
+  margin: 5px 0 0;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+/* =================================
+   ADD CUSTOMER FORM
+================================= */
+
+.customer-form {
+  background: white;
+  border: 1px solid #eadcf0;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 5px 18px rgba(53, 20, 71, 0.07);
+}
+
+.customer-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #ddd1e3;
+  border-radius: 8px;
+  outline: none;
+  color: #333;
+  background: #fff;
+}
+
+.customer-form input:focus {
+  border-color: #8e44ad;
+  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.1);
+}
+
+.customer-form button {
+  border: none;
+  background: #7b1fa2;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.customer-form .cancel-btn {
+  background: #777;
+}
+
+/* =================================
+   SEARCH
+================================= */
+
+.customer-search {
+  background: #15101c;
+  border: 1px solid #2d2035;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.customer-search input {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #3a2b43;
+  border-radius: 8px;
+  outline: none;
+  color: white;
+  background: #0f0a15;
+}
+
+.customer-search input::placeholder {
+  color: #817687;
+}
+
+.customer-search input:focus {
+  border-color: #8e44ad;
+}
+
+/* =================================
+   CUSTOMER CARD
+================================= */
+
+.customers-card {
+  background: #15101c;
+  border: 1px solid #2d2035;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  overflow-x: auto;
+}
+
+/* =================================
+   TABLE
+================================= */
+
+.customers-card th {
+  background: #24152d;
+  padding: 15px;
+  text-align: left;
+  color: #d9b8e7;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.customers-card td {
+  padding: 16px 15px;
+  border-bottom: 1px solid #2a2030;
+  color: #d6ced9;
+  background: #15101c;
+}
+
+.customers-card tr:hover td {
+  background: #1c1522;
+}
+
+/* Customer Name */
+.customer-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.customer-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #6a1b9a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.orders-badge {
+  background: #24152d;
+  color: #c084d6;
+  padding: 6px 11px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.spent {
+  font-weight: 700;
+  color: #c084d6 !important;
+}
+/* Orders */
+
+.orders-badge {
+  background: #f1e5f6;
+  color: #7b1fa2;
+  padding: 6px 11px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Spent */
+
+.spent {
+  font-weight: 700;
+  color: #eadcf1 !important;
+}
+
+/* =================================
+   ACTION BUTTONS
+================================= */
+
+.edit-btn {
+  border: none;
+  background: #7b1fa2;
+  color: white;
+  padding: 7px 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.edit-btn:hover {
+  background: #5e177b;
+}
+
+.delete-btn {
+  border: none;
+  background: #b56ac8;
+  color: white;
+  padding: 7px 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #9b4db0;
+}
+
+/* Empty */
+
+.no-customers {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+  .customer-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-form {
+    flex-wrap: wrap;
+  }
+}
