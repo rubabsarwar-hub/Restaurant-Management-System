@@ -299,3 +299,92 @@
   }
 }
 
+/* ================================
+   PROFESSIONAL NAVBAR ICONS
+   ================================ */
+
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c084fc;
+}
+
+.mobile-menu svg {
+  filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.35));
+}
+
+.navbar-left h2 {
+  color: #f5f3ff;
+}
+
+/* Search Icon */
+
+.navbar-search {
+  position: relative;
+}
+
+.navbar-search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c084fc;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.4));
+}
+
+.navbar-search input {
+  padding-left: 45px;
+}
+
+/* Date Icon */
+
+.navbar-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-date svg {
+  color: #d8b4fe;
+  filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.35));
+}
+
+/* Notification */
+
+.notification-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-btn svg {
+  color: #e879f9;
+  filter: drop-shadow(0 0 5px rgba(217, 70, 239, 0.4));
+}
+
+.notification-dot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+/* Profile */
+
+.profile-arrow {
+  color: #a855f7;
+  transition: 0.25s ease;
+}
+
+.navbar-profile:hover .profile-arrow {
+  color: #e879f9;
+  transform: translateY(2px);
+}
+
+.profile-info span i {
+  background: #d946ef;
+  box-shadow: 0 0 7px rgba(217, 70, 239, 0.6);
+}
+

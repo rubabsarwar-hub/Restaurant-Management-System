@@ -250,3 +250,113 @@
     flex-direction: column;
   }
 }
+/* ===== Professional Report Icons ===== */
+
+.report-icon {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #25102f,
+    #4c145f
+  );
+
+  border: 1px solid #7e22ce;
+
+  box-shadow:
+    0 0 18px rgba(168, 85, 247, 0.18),
+    inset 0 0 12px rgba(217, 70, 239, 0.08);
+}
+
+.report-icon svg {
+  filter: drop-shadow(
+    0 0 5px rgba(217, 70, 239, 0.45)
+  );
+}
+
+.report-icon-money {
+  color: #c084fc;
+}
+
+.report-icon-items {
+  color: #e879f9;
+}
+
+.report-icon-cash {
+  color: #d8b4fe;
+}
+
+.report-icon-card {
+  color: #f0abfc;
+}
+
+/* ===== Export Button Icon ===== */
+
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.export-btn svg {
+  filter: drop-shadow(
+    0 0 4px rgba(217, 70, 239, 0.4)
+  );
+}
+
+/* ===== Payment Mini Icons ===== */
+
+.payment-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.payment-mini-icon {
+  width: 30px;
+  height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #25102f,
+    #4c145f
+  );
+
+  border: 1px solid #7e22ce;
+
+  box-shadow:
+    0 0 10px rgba(168, 85, 247, 0.12);
+}
+
+.payment-mini-icon svg {
+  filter: drop-shadow(
+    0 0 3px rgba(217, 70, 239, 0.4)
+  );
+}
+
+.cash-mini {
+  color: #c084fc;
+}
+
+.card-mini {
+  color: #e879f9;
+}
+
+.online-mini {
+  color: #d8b4fe;
+}

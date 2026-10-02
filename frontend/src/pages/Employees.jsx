@@ -109,6 +109,8 @@ const Employees = () => {
   return (
     <div className="employees-page">
 
+      {/* Header */}
+
       <div className="employees-header">
 
         <div>
@@ -125,39 +127,112 @@ const Employees = () => {
 
       </div>
 
+      {/* Statistics */}
+
       <div className="employee-stats">
 
+        {/* Total Employees */}
+
         <div className="employee-stat-card">
-          <div className="employee-icon">👥</div>
+
+          <div className="employee-icon employee-icon-users">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+
           <div>
             <span>Total Employees</span>
             <h2>{employees.length}</h2>
           </div>
+
         </div>
 
+        {/* Active Employees */}
+
         <div className="employee-stat-card">
-          <div className="employee-icon">✅</div>
+
+          <div className="employee-icon employee-icon-active">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="m8 12 2.5 2.5L16 9" />
+            </svg>
+          </div>
+
           <div>
             <span>Active Employees</span>
             <h2>{activeEmployees}</h2>
           </div>
+
         </div>
 
+        {/* Monthly Salaries */}
+
         <div className="employee-stat-card">
-          <div className="employee-icon">💰</div>
+
+          <div className="employee-icon employee-icon-money">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect
+                x="2"
+                y="5"
+                width="20"
+                height="14"
+                rx="2"
+              />
+              <circle cx="12" cy="12" r="3" />
+              <path d="M6 9h.01M18 15h.01" />
+            </svg>
+          </div>
+
           <div>
             <span>Monthly Salaries</span>
-            <h2>Rs. {totalSalary.toLocaleString()}</h2>
+            <h2>
+              Rs. {totalSalary.toLocaleString()}
+            </h2>
           </div>
+
         </div>
 
       </div>
+
+      {/* Add Employee Form */}
 
       {showForm && (
         <form
           className="employee-form"
           onSubmit={addEmployee}
         >
+
           <input
             type="text"
             placeholder="Employee Name"
@@ -217,17 +292,39 @@ const Employees = () => {
           >
             Cancel
           </button>
+
         </form>
       )}
 
+      {/* Search */}
+
       <div className="employee-search">
+
+        <svg
+          className="employee-search-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-4-4" />
+        </svg>
+
         <input
           type="text"
-          placeholder="🔍 Search employee by name, role or phone..."
+          placeholder="Search employee by name, role or phone..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+
       </div>
+
+      {/* Employees Card */}
 
       <div className="employees-card">
 
@@ -297,6 +394,7 @@ const Employees = () => {
                 </td>
 
                 <td>
+
                   <button className="edit-employee-btn">
                     Edit
                   </button>
@@ -309,6 +407,7 @@ const Employees = () => {
                   >
                     Delete
                   </button>
+
                 </td>
 
               </tr>

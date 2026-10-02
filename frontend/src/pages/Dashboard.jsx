@@ -1,33 +1,34 @@
+
 import "./Dashboard.css";
 
-const Dashboard = () => {
-  const stats = [
-    {
-      icon: "💰",
-      title: "Today's Sales",
-      value: "Rs. 0",
-      note: "No sales recorded today",
-    },
-    {
-      icon: "🧾",
-      title: "Today's Orders",
-      value: "0",
-      note: "No orders today",
-    },
-    {
-      icon: "📦",
-      title: "Total Products",
-      value: "0",
-      note: "Products available",
-    },
-    {
-      icon: "⚠️",
-      title: "Low Stock",
-      value: "0",
-      note: "Everything is in stock",
-    },
-  ];
+const stats = [
+  {
+    icon: "/images/sales.png",
+    title: "Today's Sales",
+    value: "Rs. 0",
+    note: "No sales recorded today",
+  },
+  {
+    icon: "/images/orders.png",
+    title: "Today's Orders",
+    value: "0",
+    note: "No orders today",
+  },
+  {
+    icon: "/images/products.png",
+    title: "Total Products",
+    value: "0",
+    note: "Products available",
+  },
+  {
+    icon: "/images/low-stock.png",
+    title: "Low Stock",
+    value: "0",
+    note: "Everything is in stock",
+  },
+];
 
+const Dashboard = () => {
   return (
     <div className="dashboard">
 
@@ -40,7 +41,8 @@ const Dashboard = () => {
         </div>
 
         <button className="date-btn">
-          📅 Today
+          <img src="/images/calendar.png" alt="Calendar" />
+          Today
         </button>
       </div>
 
@@ -52,7 +54,7 @@ const Dashboard = () => {
 
             <div className="card-top">
               <div className="card-icon">
-                {stat.icon}
+                <img src={stat.icon} alt={stat.title} />
               </div>
 
               <span className="card-menu">•••</span>
@@ -95,7 +97,7 @@ const Dashboard = () => {
 
             <div className="empty-state">
               <div className="empty-icon">
-                🧾
+                <img src="/images/orders.png" alt="Orders" />
               </div>
 
               <h3>No orders yet</h3>
@@ -143,6 +145,7 @@ const Dashboard = () => {
             </div>
 
             <div className="chart-bars">
+
               <div className="chart-column">
                 <div className="chart-bar bar-1"></div>
                 <span>Mon</span>
@@ -177,10 +180,10 @@ const Dashboard = () => {
                 <div className="chart-bar bar-7"></div>
                 <span>Sun</span>
               </div>
+
             </div>
 
           </div>
-
         </div>
 
       </div>
@@ -199,7 +202,7 @@ const Dashboard = () => {
           </div>
 
           <div className="product-empty">
-            <span>🍔</span>
+            <img src="/images/burger.png" alt="Products" />
             <p>No product sales yet</p>
           </div>
 
@@ -218,7 +221,7 @@ const Dashboard = () => {
           </div>
 
           <div className="product-empty">
-            <span>✅</span>
+            <img src="/images/success.png" alt="In Stock" />
             <p>No low-stock products</p>
           </div>
 
@@ -237,22 +240,22 @@ const Dashboard = () => {
         <div className="action-buttons">
 
           <button>
-            <span>🛒</span>
+            <img src="/images/sales.png" alt="New Sale" />
             New Sale
           </button>
 
           <button>
-            <span>🍔</span>
+            <img src="/images/burger.png" alt="Add Product" />
             Add Product
           </button>
 
           <button>
-            <span>🧾</span>
+            <img src="/images/orders.png" alt="View Orders" />
             View Orders
           </button>
 
           <button>
-            <span>📦</span>
+            <img src="/images/products.png" alt="Inventory" />
             Inventory
           </button>
 
@@ -265,3 +268,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

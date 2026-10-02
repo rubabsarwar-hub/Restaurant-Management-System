@@ -266,3 +266,77 @@
     grid-template-columns: 1fr;
   }
 }
+/* ===== Professional Inventory Icons ===== */
+
+.inventory-icon {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #25102f,
+    #4c145f
+  );
+
+  border: 1px solid #7e22ce;
+
+  box-shadow:
+    0 0 18px rgba(168, 85, 247, 0.18),
+    inset 0 0 12px rgba(217, 70, 239, 0.08);
+}
+
+.inventory-icon svg {
+  filter: drop-shadow(
+    0 0 5px rgba(217, 70, 239, 0.45)
+  );
+}
+
+.inventory-icon-box {
+  color: #c084fc;
+}
+
+.inventory-icon-chart {
+  color: #e879f9;
+}
+
+.inventory-icon-warning {
+  color: #d8b4fe;
+}
+
+.inventory-icon-out {
+  color: #f0abfc;
+}
+
+/* ===== Search Icon ===== */
+
+.inventory-search {
+  position: relative;
+}
+
+.inventory-search-icon {
+  position: absolute;
+
+  left: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #c084fc;
+
+  pointer-events: none;
+
+  filter: drop-shadow(
+    0 0 4px rgba(168, 85, 247, 0.4)
+  );
+}
+
+.inventory-search input {
+  padding-left: 48px;
+}

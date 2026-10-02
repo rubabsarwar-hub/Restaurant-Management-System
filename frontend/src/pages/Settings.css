@@ -257,3 +257,71 @@
     margin: 12px 0 0;
   }
 }
+/* ================================
+   PROFESSIONAL SETTINGS ICONS
+   ================================ */
+
+.settings-title-icon {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #25102f, #4c145f);
+  border: 1px solid #7e22ce;
+  box-shadow:
+    0 0 18px rgba(168, 85, 247, 0.18),
+    inset 0 0 12px rgba(217, 70, 239, 0.08);
+}
+
+.settings-title-icon svg {
+  filter: drop-shadow(0 0 5px rgba(217, 70, 239, 0.45));
+}
+
+.restaurant-settings-icon {
+  color: #c084fc;
+}
+
+.system-settings-icon {
+  color: #e879f9;
+}
+
+.account-settings-icon {
+  color: #d8b4fe;
+}
+
+/* Save Button */
+
+.save-settings-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.save-settings-btn svg {
+  filter: drop-shadow(0 0 4px rgba(217, 70, 239, 0.45));
+}
+
+/* Success Message */
+
+.save-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.success-check {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(217, 70, 239, 0.15);
+  color: #e879f9;
+  border: 1px solid rgba(217, 70, 239, 0.35);
+  font-weight: 700;
+}

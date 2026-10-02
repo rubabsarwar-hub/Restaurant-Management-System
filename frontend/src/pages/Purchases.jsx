@@ -107,7 +107,6 @@ const Purchases = () => {
     <div className="purchases-page">
 
       {/* Header */}
-
       <div className="purchases-header">
 
         <div>
@@ -125,40 +124,155 @@ const Purchases = () => {
       </div>
 
       {/* Statistics */}
-
       <div className="purchase-stats">
 
+        {/* Total Purchases */}
         <div className="purchase-stat-card">
-          <div className="purchase-icon">🛒</div>
+
+          <div className="purchase-icon purchase-icon-cart">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="24"
+                cy="52"
+                r="4"
+                fill="currentColor"
+              />
+
+              <circle
+                cx="48"
+                cy="52"
+                r="4"
+                fill="currentColor"
+              />
+
+              <path
+                d="M7 10h8l5 30h30l7-22H18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M20 40h30"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
 
           <div>
             <span>Total Purchases</span>
             <h2>{purchases.length}</h2>
           </div>
+
         </div>
 
+        {/* Total Items */}
         <div className="purchase-stat-card">
-          <div className="purchase-icon">📦</div>
+
+          <div className="purchase-icon purchase-icon-box">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 20l22-10 22 10-22 10-22-10z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M10 20v25l22 10 22-10V20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M32 30v25"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+
+              <path
+                d="M21 15l22 10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+            </svg>
+          </div>
 
           <div>
             <span>Total Items</span>
             <h2>{totalItems}</h2>
           </div>
+
         </div>
 
+        {/* Total Amount */}
         <div className="purchase-stat-card">
-          <div className="purchase-icon">💰</div>
+
+          <div className="purchase-icon purchase-icon-money">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="8"
+                y="16"
+                width="48"
+                height="32"
+                rx="5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+
+              <circle
+                cx="32"
+                cy="32"
+                r="8"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+
+              <path
+                d="M16 25h1M47 39h1"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
 
           <div>
             <span>Total Amount</span>
-            <h2>Rs. {totalPurchases.toLocaleString()}</h2>
+            <h2>
+              Rs. {totalPurchases.toLocaleString()}
+            </h2>
           </div>
+
         </div>
 
       </div>
 
       {/* Add Purchase Form */}
-
       {showForm && (
         <form
           className="purchase-form"
@@ -229,12 +343,35 @@ const Purchases = () => {
       )}
 
       {/* Search */}
-
       <div className="purchase-search">
+
+        <svg
+          className="purchase-search-icon"
+          viewBox="0 0 64 64"
+          width="21"
+          height="21"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="27"
+            cy="27"
+            r="15"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="5"
+          />
+
+          <path
+            d="M38 38l15 15"
+            stroke="currentColor"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+        </svg>
 
         <input
           type="text"
-          placeholder="🔍 Search by supplier or product..."
+          placeholder="Search by supplier or product..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -242,7 +379,6 @@ const Purchases = () => {
       </div>
 
       {/* Purchase Table */}
-
       <div className="purchases-card">
 
         <div className="purchases-card-title">

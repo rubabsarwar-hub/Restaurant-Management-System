@@ -320,3 +320,74 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Professional Expense Icons ===== */
+
+.expense-icon {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #25102f,
+    #4c145f
+  );
+
+  border: 1px solid #7e22ce;
+
+  box-shadow:
+    0 0 18px rgba(168, 85, 247, 0.18),
+    inset 0 0 12px rgba(217, 70, 239, 0.08);
+}
+
+.expense-icon svg {
+  filter: drop-shadow(
+    0 0 5px rgba(217, 70, 239, 0.45)
+  );
+}
+
+.expense-icon-money {
+  color: #c084fc;
+}
+
+.expense-icon-records {
+  color: #e879f9;
+}
+
+.expense-icon-category {
+  color: #d8b4fe;
+}
+
+/* ===== Expense Search Icon ===== */
+
+.expense-search {
+  position: relative;
+}
+
+.expense-search-icon {
+  position: absolute;
+
+  left: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #c084fc;
+
+  pointer-events: none;
+
+  filter: drop-shadow(
+    0 0 4px rgba(168, 85, 247, 0.4)
+  );
+}
+
+.expense-search input {
+  padding-left: 48px;
+}

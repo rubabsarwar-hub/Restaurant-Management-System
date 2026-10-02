@@ -108,24 +108,79 @@ const Customers = () => {
 
       <div className="customer-stats">
 
+        {/* Total Customers */}
+
         <div className="customer-stat-card">
-          <div className="stat-icon">👥</div>
+          <div className="customer-icon customer-icon-users">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+
           <div>
             <span>Total Customers</span>
             <h2>{totalCustomers}</h2>
           </div>
         </div>
 
+        {/* Total Orders */}
+
         <div className="customer-stat-card">
-          <div className="stat-icon">🛒</div>
+          <div className="customer-icon customer-icon-orders">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L21 6H6" />
+            </svg>
+          </div>
+
           <div>
             <span>Total Orders</span>
             <h2>{totalOrders}</h2>
           </div>
         </div>
 
+        {/* Total Revenue */}
+
         <div className="customer-stat-card">
-          <div className="stat-icon">💰</div>
+          <div className="customer-icon customer-icon-money">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <circle cx="12" cy="12" r="3" />
+              <path d="M6 9h.01M18 15h.01" />
+            </svg>
+          </div>
+
           <div>
             <span>Total Revenue</span>
             <h2>Rs. {totalSpent.toLocaleString()}</h2>
@@ -182,9 +237,24 @@ const Customers = () => {
       {/* Search */}
 
       <div className="customer-search">
+        <svg
+          className="customer-search-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-4-4" />
+        </svg>
+
         <input
           type="text"
-          placeholder="🔍 Search customer by name or phone..."
+          placeholder="Search customer by name or phone..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

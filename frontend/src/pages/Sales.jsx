@@ -85,20 +85,41 @@ const Sales = () => {
       {/* Header */}
 
       <div className="sales-header">
-
         <div>
           <h1>Sales</h1>
           <p>Track your restaurant sales and revenue</p>
         </div>
-
       </div>
 
       {/* Statistics */}
 
       <div className="sales-stats">
 
+        {/* Total Sales */}
+
         <div className="sales-stat-card">
-          <div className="sales-icon">💰</div>
+          <div className="sales-icon sales-icon-money">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect
+                x="2"
+                y="5"
+                width="20"
+                height="14"
+                rx="2"
+              />
+              <circle cx="12" cy="12" r="3" />
+              <path d="M6 9h.01M18 15h.01" />
+            </svg>
+          </div>
 
           <div>
             <span>Total Sales</span>
@@ -108,8 +129,25 @@ const Sales = () => {
           </div>
         </div>
 
+        {/* Total Orders */}
+
         <div className="sales-stat-card">
-          <div className="sales-icon">🛒</div>
+          <div className="sales-icon sales-icon-orders">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L21 6H6" />
+            </svg>
+          </div>
 
           <div>
             <span>Total Orders</span>
@@ -117,8 +155,26 @@ const Sales = () => {
           </div>
         </div>
 
+        {/* Items Sold */}
+
         <div className="sales-stat-card">
-          <div className="sales-icon">📦</div>
+          <div className="sales-icon sales-icon-items">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 8.5 12 4 3 8.5v7L12 20l9-4.5z" />
+              <path d="m3 8.5 9 4.5 9-4.5" />
+              <path d="M12 13v7" />
+              <path d="M7.5 6.25 16.5 11" />
+            </svg>
+          </div>
 
           <div>
             <span>Items Sold</span>
@@ -126,8 +182,27 @@ const Sales = () => {
           </div>
         </div>
 
+        {/* Average Sale */}
+
         <div className="sales-stat-card">
-          <div className="sales-icon">📊</div>
+          <div className="sales-icon sales-icon-chart">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 19V5" />
+              <path d="M4 19h16" />
+              <path d="m7 15 4-4 3 2 5-6" />
+              <path d="M19 7h-3" />
+              <path d="M19 7v3" />
+            </svg>
+          </div>
 
           <div>
             <span>Average Sale</span>
@@ -143,9 +218,24 @@ const Sales = () => {
 
       <div className="sales-search">
 
+        <svg
+          className="sales-search-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-4-4" />
+        </svg>
+
         <input
           type="text"
-          placeholder="🔍 Search order or customer..."
+          placeholder="Search order or customer..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

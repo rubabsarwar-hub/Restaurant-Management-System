@@ -1,3 +1,4 @@
+
 import { useMemo, useState } from "react";
 import "./POS.css";
 
@@ -14,62 +15,63 @@ const POS = () => {
 
   const taxRate = 5;
 
+  // PRODUCTS
   const products = [
     {
       id: 1,
       name: "Chicken Burger",
       price: 450,
       category: "Burgers",
-      emoji: "🍔",
+      image: "/images/chicken-burger.jpg",
     },
     {
       id: 2,
       name: "Zinger Burger",
       price: 550,
       category: "Burgers",
-      emoji: "🍔",
+      image: "/images/zinger-burger.jpg",
     },
     {
       id: 3,
       name: "Pizza",
       price: 1200,
       category: "Pizza",
-      emoji: "🍕",
+      image: "/images/pizza.jpg",
     },
     {
       id: 4,
       name: "French Fries",
       price: 250,
       category: "Sides",
-      emoji: "🍟",
+      image: "/images/fries.jpg",
     },
     {
       id: 5,
       name: "Cold Drink",
       price: 120,
       category: "Drinks",
-      emoji: "🥤",
+      image: "/images/cold-drink.jpg",
     },
     {
       id: 6,
       name: "Chicken Biryani",
       price: 350,
       category: "Rice",
-      emoji: "🍛",
+      image: "/images/biryani.jpg",
     },
     {
       id: 7,
       name: "Chicken Wings",
       price: 650,
       category: "Sides",
-      emoji: "🍗",
+      image: "/images/chicken-wings.jpg",
     },
     {
       id: 8,
       name: "Club Sandwich",
       price: 500,
       category: "Sandwich",
-      emoji: "🥪",
+      image: "/images/club-sandwich.jpg",
     },
   ];
 
@@ -151,7 +153,7 @@ const POS = () => {
     );
   }, [cart]);
 
-  // DISCOUNT AMOUNT
+  // DISCOUNT
   const discountAmount = (subtotal * discount) / 100;
 
   // TAX
@@ -291,8 +293,12 @@ const POS = () => {
                 onClick={() => addToCart(product)}
               >
 
+                {/* REAL PRODUCT IMAGE */}
                 <div className="product-image">
-                  {product.emoji}
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                  />
                 </div>
 
                 <div className="product-info">
@@ -424,8 +430,12 @@ const POS = () => {
                     key={item.id}
                   >
 
+                    {/* REAL CART IMAGE */}
                     <div className="cart-item-icon">
-                      {item.emoji}
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                      />
                     </div>
 
                     <div className="cart-item-info">
@@ -493,6 +503,7 @@ const POS = () => {
 
             <div className="bill-row">
               <span>Subtotal</span>
+
               <strong>
                 Rs. {subtotal.toLocaleString()}
               </strong>
@@ -511,11 +522,15 @@ const POS = () => {
                     setDiscount(
                       Math.min(
                         100,
-                        Math.max(0, Number(e.target.value))
+                        Math.max(
+                          0,
+                          Number(e.target.value)
+                        )
                       )
                     )
                   }
                 />
+
                 <span>%</span>
               </div>
 
@@ -581,6 +596,7 @@ const POS = () => {
           >
             <span>✓</span>
             Place Order
+
             <strong>
               Rs. {Math.round(grandTotal).toLocaleString()}
             </strong>
@@ -593,3 +609,4 @@ const POS = () => {
 };
 
 export default POS;
+

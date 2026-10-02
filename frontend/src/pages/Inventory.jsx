@@ -89,7 +89,6 @@ const Inventory = () => {
     <div className="inventory-page">
 
       {/* Header */}
-
       <div className="inventory-header">
 
         <div>
@@ -100,54 +99,230 @@ const Inventory = () => {
       </div>
 
       {/* Statistics */}
-
       <div className="inventory-stats">
 
+        {/* Total Products */}
         <div className="inventory-stat-card">
-          <div className="inventory-icon">📦</div>
+
+          <div className="inventory-icon inventory-icon-box">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 20l22-10 22 10-22 10-22-10z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M10 20v25l22 10 22-10V20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M32 30v25"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+
+              <path
+                d="M21 15l22 10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+            </svg>
+          </div>
 
           <div>
             <span>Total Products</span>
             <h2>{totalProducts}</h2>
           </div>
+
         </div>
 
+        {/* Total Stock */}
         <div className="inventory-stat-card">
-          <div className="inventory-icon">📊</div>
+
+          <div className="inventory-icon inventory-icon-chart">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 54V10"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+
+              <path
+                d="M10 54h44"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+
+              <rect
+                x="18"
+                y="34"
+                width="7"
+                height="14"
+                rx="2"
+                fill="currentColor"
+              />
+
+              <rect
+                x="29"
+                y="25"
+                width="7"
+                height="23"
+                rx="2"
+                fill="currentColor"
+              />
+
+              <rect
+                x="40"
+                y="15"
+                width="7"
+                height="33"
+                rx="2"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
 
           <div>
             <span>Total Stock</span>
             <h2>{totalStock}</h2>
           </div>
+
         </div>
 
+        {/* Low Stock */}
         <div className="inventory-stat-card">
-          <div className="inventory-icon">⚠️</div>
+
+          <div className="inventory-icon inventory-icon-warning">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 8L58 54H6L32 8z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M32 23v15"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+
+              <circle
+                cx="32"
+                cy="46"
+                r="2.5"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
 
           <div>
             <span>Low Stock</span>
             <h2>{lowStock}</h2>
           </div>
+
         </div>
 
+        {/* Out of Stock */}
         <div className="inventory-stat-card">
-          <div className="inventory-icon">🚫</div>
+
+          <div className="inventory-icon inventory-icon-out">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="32"
+                cy="32"
+                r="23"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+
+              <path
+                d="M22 22l20 20"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+
+              <path
+                d="M42 22L22 42"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
 
           <div>
             <span>Out of Stock</span>
             <h2>{outOfStock}</h2>
           </div>
+
         </div>
 
       </div>
 
       {/* Search */}
-
       <div className="inventory-search">
+
+        <svg
+          className="inventory-search-icon"
+          viewBox="0 0 64 64"
+          width="21"
+          height="21"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="27"
+            cy="27"
+            r="15"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="5"
+          />
+
+          <path
+            d="M38 38l15 15"
+            stroke="currentColor"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+        </svg>
 
         <input
           type="text"
-          placeholder="🔍 Search product or category..."
+          placeholder="Search product or category..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -155,7 +330,6 @@ const Inventory = () => {
       </div>
 
       {/* Inventory Card */}
-
       <div className="inventory-card">
 
         <div className="inventory-card-title">
@@ -185,6 +359,7 @@ const Inventory = () => {
           {filteredProducts.map((product) => {
 
             const isOutOfStock = product.stock === 0;
+
             const isLowStock =
               product.stock <= product.minStock;
 

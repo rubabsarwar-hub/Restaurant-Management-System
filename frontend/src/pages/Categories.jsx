@@ -66,7 +66,6 @@ const Categories = () => {
     <div className="categories-page">
 
       {/* Header */}
-
       <div className="categories-header">
 
         <div>
@@ -84,23 +83,80 @@ const Categories = () => {
       </div>
 
       {/* Statistics */}
-
       <div className="category-stats">
 
+        {/* Total Categories */}
         <div className="category-stat-card">
-          <div className="category-icon">
-            📂
+
+          <div className="category-icon category-icon-folder">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 18c0-3.3 2.7-6 6-6h15l6 7h15c3.3 0 6 2.7 6 6v23c0 3.3-2.7 6-6 6H14c-3.3 0-6-2.7-6-6V18z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M9 25h46"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
 
           <div>
             <span>Total Categories</span>
             <h2>{categories.length}</h2>
           </div>
+
         </div>
 
+        {/* Total Products */}
         <div className="category-stat-card">
-          <div className="category-icon">
-            📦
+
+          <div className="category-icon category-icon-product">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 20l20-9 20 9-20 9-20-9z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M12 20v24l20 10 20-10V20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+
+              <path
+                d="M32 29v25"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+
+              <path
+                d="M22 16l20 9"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+            </svg>
           </div>
 
           <div>
@@ -113,23 +169,47 @@ const Categories = () => {
               )}
             </h2>
           </div>
+
         </div>
 
+        {/* Showing */}
         <div className="category-stat-card">
-          <div className="category-icon">
-            🔍
+
+          <div className="category-icon category-icon-search">
+            <svg
+              viewBox="0 0 64 64"
+              width="32"
+              height="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="27"
+                cy="27"
+                r="15"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="5"
+              />
+
+              <path
+                d="M38 38l15 15"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
 
           <div>
             <span>Showing</span>
             <h2>{filteredCategories.length}</h2>
           </div>
+
         </div>
 
       </div>
 
       {/* Add Form */}
-
       {showForm && (
         <form
           className="category-form"
@@ -161,12 +241,35 @@ const Categories = () => {
       )}
 
       {/* Search */}
-
       <div className="category-search">
+
+        <svg
+          className="search-icon"
+          viewBox="0 0 64 64"
+          width="21"
+          height="21"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="27"
+            cy="27"
+            r="15"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="5"
+          />
+
+          <path
+            d="M38 38l15 15"
+            stroke="currentColor"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+        </svg>
 
         <input
           type="text"
-          placeholder="🔍 Search category..."
+          placeholder="Search category..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -174,7 +277,6 @@ const Categories = () => {
       </div>
 
       {/* Categories Card */}
-
       <div className="categories-card">
 
         <div className="categories-card-title">

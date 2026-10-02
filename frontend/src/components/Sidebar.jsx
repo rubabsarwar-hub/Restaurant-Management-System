@@ -1,58 +1,88 @@
-
 import { NavLink } from "react-router-dom";
+import {
+  LuLayoutDashboard,
+  LuShoppingCart,
+  LuReceipt,
+  LuUtensils,
+  LuTags,
+  LuDownload,
+  LuPackage,
+  LuTruck,
+  LuUsers,
+  LuWalletCards,
+  LuCircleDollarSign,
+  LuChartNoAxesColumnIncreasing,
+  LuUserRound,
+  LuSettings,
+  LuLogOut,
+} from "react-icons/lu";
+
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const mainMenu = [
-    { path: "/dashboard", icon: "▦", label: "Dashboard" },
-    { path: "/pos", icon: "🛒", label: "POS / New Sale" },
-    { path: "/orders", icon: "🧾", label: "Orders", badge: "0" },
+    { path: "/dashboard", icon: LuLayoutDashboard, label: "Dashboard" },
+    { path: "/pos", icon: LuShoppingCart, label: "POS / New Sale" },
+    { path: "/orders", icon: LuReceipt, label: "Orders", badge: "0" },
   ];
 
   const managementMenu = [
-    { path: "/products", icon: "🍔", label: "Products" },
-    { path: "/categories", icon: "▤", label: "Categories" },
-    { path: "/purchases", icon: "📥", label: "Purchases" },
-    { path: "/inventory", icon: "📦", label: "Inventory" },
-    { path: "/suppliers", icon: "🚚", label: "Suppliers" },
-    { path: "/customers", icon: "👥", label: "Customers" },
-    { path: "/expenses", icon: "💸", label: "Expenses" },
+    { path: "/products", icon: LuUtensils, label: "Products" },
+    { path: "/categories", icon: LuTags, label: "Categories" },
+    { path: "/purchases", icon: LuDownload, label: "Purchases" },
+    { path: "/inventory", icon: LuPackage, label: "Inventory" },
+    { path: "/suppliers", icon: LuTruck, label: "Suppliers" },
+    { path: "/customers", icon: LuUsers, label: "Customers" },
+    { path: "/expenses", icon: LuWalletCards, label: "Expenses" },
   ];
 
   const reportsMenu = [
-    { path: "/sales", icon: "💰", label: "Sales History" },
-    { path: "/reports", icon: "📊", label: "Reports" },
+    { path: "/sales", icon: LuCircleDollarSign, label: "Sales History" },
+    {
+      path: "/reports",
+      icon: LuChartNoAxesColumnIncreasing,
+      label: "Reports",
+    },
   ];
 
   const adminMenu = [
-    { path: "/employees", icon: "👤", label: "Employees" },
-    { path: "/settings", icon: "⚙️", label: "Settings" },
+    { path: "/employees", icon: LuUserRound, label: "Employees" },
+    { path: "/settings", icon: LuSettings, label: "Settings" },
   ];
 
   const renderMenu = (items) =>
-    items.map((item) => (
-      <NavLink
-        key={item.path}
-        to={item.path}
-        className={({ isActive }) =>
-          `sidebar-link ${isActive ? "active" : ""}`
-        }
-      >
-        <span className="sidebar-icon">{item.icon}</span>
-        <span className="sidebar-label">{item.label}</span>
+    items.map((item) => {
+      const Icon = item.icon;
 
-        {item.badge && (
-          <span className="sidebar-badge">{item.badge}</span>
-        )}
-      </NavLink>
-    ));
+      return (
+        <NavLink
+          key={item.path}
+          to={item.path}
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <span className="sidebar-icon">
+            <Icon size={20} strokeWidth={2} />
+          </span>
+
+          <span className="sidebar-label">{item.label}</span>
+
+          {item.badge && (
+            <span className="sidebar-badge">{item.badge}</span>
+          )}
+        </NavLink>
+      );
+    });
 
   return (
     <aside className="sidebar">
 
       {/* Logo */}
       <div className="sidebar-logo">
-        <div className="logo-icon">🍽️</div>
+        <div className="logo-icon">
+          <LuUtensils size={23} strokeWidth={2} />
+        </div>
 
         <div>
           <h2>Restaurant</h2>
@@ -72,13 +102,13 @@ const Sidebar = () => {
         <nav>{renderMenu(managementMenu)}</nav>
       </div>
 
-      {/* Reports */}
+      {/* Analytics */}
       <div className="sidebar-section">
         <p className="sidebar-title">ANALYTICS</p>
         <nav>{renderMenu(reportsMenu)}</nav>
       </div>
 
-      {/* Admin */}
+      {/* Administration */}
       <div className="sidebar-section">
         <p className="sidebar-title">ADMINISTRATION</p>
         <nav>{renderMenu(adminMenu)}</nav>
@@ -94,7 +124,7 @@ const Sidebar = () => {
         </div>
 
         <button className="logout-btn" title="Logout">
-          ↪
+          <LuLogOut size={19} strokeWidth={2} />
         </button>
       </div>
 
@@ -103,4 +133,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
